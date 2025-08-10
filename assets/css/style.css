@@ -1,0 +1,18 @@
+@import url("navigation.css");
+
+body{
+  background-color: #000;
+}
+
+#container{
+  background: linear-gradient(145deg, #2f2f2f, #5a5a5a); /* Gris oscuro a gris medio */
+  border-radius: 15px;
+  margin-top: 55px;
+  margin-right: 70px;
+  margin-left: 70px;
+  margin-bottom: 60px;
+  padding: 20px;
+  padding-top: 80px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Sombra suave */
+  color: white;
+}

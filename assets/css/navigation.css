@@ -1,0 +1,15 @@
+.nav{
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  color: black;
+  height: 50px;
+  top: 55px;
+  right: 78px;
+  left: 78px;
+  border: 0.1px solid #ffff;
+  border-radius: 15px;
+  padding: 5px 20px;
+}
