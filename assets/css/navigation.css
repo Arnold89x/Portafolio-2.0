@@ -1,14 +1,11 @@
 @keyframes vida {
   0% {
-    opacity: 1;
     transform: scale(1) rotate(0deg);
   }
   25% {
-    opacity: 0.9;
     transform: scale(1.1) rotate(7deg);
   }
   50% {
-    opacity: 1;
     transform: scale(1.05) rotate(-7deg);
   }
   75% {
@@ -64,16 +61,9 @@
   }
 }
 
-@keyframes carretera {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+@keyframes scan {
+  from { mask-position: 0 -100%;}
+  to   { mask-position: 0 100%; }
 }
 
 .nav{
@@ -200,49 +190,12 @@
 }
 
 .nav__logo {
-  animation-name: vida;
-  animation-duration: 2s;
-  animation-delay: 9s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.nav__logo:hover{
-  animation-name: carretera;
-  animation-duration: 2s;
-  animation-timing-function:ease-in-out;
-  animation-delay:0s;
-  animation-iteration-count: infinite;
-  -webkit-animation-play-state:running;
+  position: relative;
+  display: inline-block;
   transition: all 0.3s ease;
 }
-.nav__logo:hover::before {
-  content: "";
-  position: absolute;
-  left: 36px;
-  width: 10%;
-  height: 4px;  /* grosor de la línea */
-  background: rgba(80, 80, 80, 0.7); /* línea blanca semitransparente */
-  bottom: 0;    /* empieza en la parte inferior */
-  opacity: 0;   /* invisible al inicio */
-  animation: scanlineUp 1.5s forwards;
-  animation-iteration-count: infinite;
-  pointer-events: none; /* para que no interfiera con el mouse */
-}
 
-@keyframes scanlineUp {
-  0% {
-    bottom: 0;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    bottom: 100%;
-    opacity: 0;
-  }
+.nav__logo:hover {
+  mask-image: linear-gradient(to bottom,transparent 40%,rgba(0,0,0,1) 50%,transparent 60%);
+  mask-size: 100% 200%;
 }
