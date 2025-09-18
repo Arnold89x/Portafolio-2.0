@@ -2,76 +2,92 @@
   0% {
     transform: scale(1) rotate(0deg);
   }
+
   25% {
     transform: scale(1.1) rotate(7deg);
   }
+
   50% {
     transform: scale(1.05) rotate(-7deg);
   }
+
   75% {
     transform: scale(1) rotate(0deg);
   }
+
   90% {
     transform: scale(1.3) rotate(0deg);
   }
+
   100% {
     transform: scale(1) rotate(0deg);
   }
 }
 
 @keyframes centro {
-  0%{
+  0% {
     transform: translateX(100%);
     opacity: 0;
   }
-  70%{
+
+  70% {
     transform: translateX(0%);
     opacity: 1;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes dentro{
-  0%{
+@keyframes dentro {
+  0% {
     transform: translateX(-100%);
     opacity: 0;
   }
-  70%{
+
+  70% {
     transform: translateX(0%);
     opacity: 1;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes afuera{
-  0%{
+@keyframes afuera {
+  0% {
     transform: translateY(100%);
     opacity: 0;
   }
-  70%{
+
+  70% {
     transform: translateY(0%);
     opacity: 1;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes scan {
-  from { mask-position: 0 -100%;}
-  to   { mask-position: 0 100%; }
+  from {
+    mask-position: 0 -100%;
+  }
+
+  to {
+    mask-position: 0 100%;
+  }
 }
 
-.nav{
+.nav {
   display: flex;
-  position: fixed;
+  position: absolute;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #8a8a8a, #5c5c5c 40%, #343434 70%, #222222 90%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #464646 0%, #3a3a3a 15%, #7a1e1e 35%, #2a2a2a 65%, #1b1b1b 100%);
   height: 50px;
   top: 55px;
   right: 78px;
@@ -80,17 +96,18 @@
   border-radius: 15px;
   padding: 5px 20px;
   transition: all 0.7s ease;
+  z-index: 1000;
 }
 
-.nav:hover{
+.nav:hover {
   transform: scale(1.05);
 }
 
-.nav:hover::after{
-  width: 15%;	
+.nav:hover::after {
+  width: 15%;
 }
 
-.nav::after{
+.nav::after {
   content: "";
   position: absolute;
   transform-origin: center;
@@ -99,11 +116,11 @@
   bottom: -10px;
   width: 0;
   height: 1.55px;
-  background-color: #ccc; 
+  background-color: #e03c3c;
   transition: width 0.5s ease;
 }
 
-.nav__nombre{
+.nav__nombre {
   font-family: 'Great Vibes', cursive;
   font-size: 24px;
   letter-spacing: 1px;
@@ -114,7 +131,7 @@
   transition: transform 0.3s ease;
 }
 
-.nav__nombre:hover{
+.nav__nombre:hover {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -122,19 +139,19 @@
   transition: all 0.3s ease;
 }
 
-.nav__enlace a{
+.nav__enlace a {
   position: relative;
-  font-family:sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
-  color: #ccc;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav__enlace a:hover{
-  color: #fff;
-  transform:scale(1.1);
-  text-shadow: 0 0 4px #ccc;
+.nav__enlace a:hover {
+  color: #e03c3c;
+  transform: scale(1.1);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 
 .nav__enlace a::after {
@@ -144,7 +161,7 @@
   bottom: -3px;
   width: 0;
   height: 1.55px;
-  background-color: #ccc; 
+  background-color: #e03c3c;
   transition: width 0.5s ease;
 }
 
@@ -152,41 +169,49 @@
   width: 100%;
 }
 
-.nav__enlace{
+.nav__enlace {
   display: flex;
   gap: 15px;
 }
 
-#logo__centro,#logo__dentro,#logo__afuera{
+#logo__centro,
+#logo__dentro,
+#logo__afuera {
   opacity: 0;
 }
 
-#logo__centro{
+#logo__centro {
   animation-name: centro;
   animation-duration: 3s;
-  animation-timing-function:ease-in-out;
-  animation-delay:0s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   transition: all 0.3s ease;
+  stroke: #fff;
+  fill: #fff;
 }
 
-#logo__dentro{
+#logo__dentro {
   animation-name: dentro;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-delay: 3s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
+  stroke: #fff;
+  fill: #fff;
 }
 
-#logo__afuera{
+#logo__afuera {
   animation-name: afuera;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-delay: 6s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
+  stroke: #fff;
+  fill: #fff;
 }
 
 .nav__logo {
@@ -196,6 +221,6 @@
 }
 
 .nav__logo:hover {
-  mask-image: linear-gradient(to bottom,transparent 40%,rgba(0,0,0,1) 50%,transparent 60%);
+  mask-image: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 1) 50%, transparent 60%);
   mask-size: 100% 200%;
 }
