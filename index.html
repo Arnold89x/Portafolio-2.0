@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <!--BODY (CUERPO)-->
 
@@ -79,10 +80,11 @@
             código funcional, enfocado en soluciones reales y alineado con mis habilidades.</p>
           <br>
           <br>
-          <button class="hero__button" type="button">Ver proyectos</button>
+          <a href="#project__general__container" class="hero__button">Ver proyectos</a>
           <br>
           <br>
-          <button class="hero__button" type="button">Contacto</button>
+          <br>
+          <a href="" class="hero__button">Contacto</a>
         </div>
         <div class="hero__imagen">
           <img src="assets/img/imagenmia.jpg" alt="Foto de Arnold Gil desarrollador de software" id="hero__imagen">
@@ -118,22 +120,24 @@
     <br>
     <section class="about__me__container">
       <div class="about__me__content">
-        <div class ="about__me__text">
-        <h2>Sobre mí</h2>
-        <p>
-          Soy Arnold, un joven desarrollador de software comprometido con el aprendizaje constante para mejorar mi
-          entorno
-          y construir una carrera que se distinga por mis habilidades, logros y esfuerzo.
-        </p>
-        <p>
-          Me encanta aprender, leer y entrenar; amo los ordenadores y desarmar cosas. Soy fanático de los Legos y las
-          matemáticas, que son lo que me impulsa a seguir con mi carrera y formarme profesionalmente.
-        </p>
-        <p>
-          Actualmente me estoy desarrollando como <strong class="word">full-stack</strong>, fortaleciendo mis competencias en <strong class="word">back-end</strong> y <strong class="word">front-end</strong>
-          para
-          crear soluciones versátiles y eficientes que optimicen el funcionamiento de los sistemas.
-        </p>
+        <div class="about__me__text">
+          <h2>Sobre mí</h2>
+          <p>
+            Soy Arnold, un joven desarrollador de software comprometido con el aprendizaje constante para mejorar mi
+            entorno
+            y construir una carrera que se distinga por mis habilidades, logros y esfuerzo.
+          </p>
+          <p>
+            Me encanta aprender, leer y entrenar; amo los ordenadores y desarmar cosas. Soy fanático de los Legos y
+            las
+            matemáticas, que son lo que me impulsa a seguir con mi carrera y formarme profesionalmente.
+          </p>
+          <p>
+            Actualmente me estoy desarrollando como <strong class="word">full-stack</strong>, fortaleciendo mis
+            competencias en <strong class="word">back-end</strong> y <strong class="word">front-end</strong>
+            para
+            crear soluciones versátiles y eficientes que optimicen el funcionamiento de los sistemas.
+          </p>
         </div>
         <div class="chips__container">
           <p class="chip">Java</p>
@@ -143,14 +147,66 @@
           <p class="chip">HTML</p>
           <p class="chip">CSS</p>
           <p class="chip">JavaScript</p>
-          <p class="chip">Node.js</p>
+          <p class="chip">Arduino</p>
         </div>
       </div>
       <div class="about__me__logo">
-        <p id="angle"><<span id="slash">/</span>></p>
+        <p id="angle">
+          <<span id="slash">/</span>>
+        </p>
+      </div>
+    </section>
+    <br>
+    <section id="project__general__container">
+      <div class="project__card">
+        <div class="domotic__house__img">
+          <img src="/assets/img/casa domotica.jpg" alt="Imagen de la casa domotica montada" class="img__casa">
+        </div>
+        <div class="domotic__house__content">
+          <h3>🏠 Casa Domótica</h3>
+          <p><strong>Vivienda semi-automatizada con Arduino.</strong></p>
+          <p>Sistema que responde a condiciones del entorno mediante sensores programados con Arduino. Controla
+            iluminación, detección de movimiento, lluvia y acceso usando PIR, LEDs, zumbador y servomotores.</p>
+          <div class="chips__project__container">
+            <p class="chipp">Arduino</p>
+            <p class="chipp">IoT</p>
+          </div>
+          <div class="house__buttons__container">
+            <button class="house__button">Demo</button>
+          </div>
+        </div>
+      </div>
+      <div class="project__card">
+        <div class="portfolio">
+          <img src="" alt="">
+        </div>
+      </div>
+      <div class="project__card">
+        <div class="tic__tac__toe">
+          <img src="" alt="">
+        </div>
+      </div>
+      <div class="project__card">
+        <div class="c#__inventary">
+          <img src="" alt="">
+        </div>
       </div>
     </section>
   </div>
+
+  <div class="domotic__house__video__container">
+    <div class="domotic__house__video">
+      <iframe id="video" src="https://www.youtube.com/embed/wX-dGcBVW20?si=NhJlFBFNFeHi5d4f&enablejsapi=1"
+        title="Casa Domotica" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+    </div>
+    <div class="exit__domotic__video">
+      <p>X</p>
+    </div>
+  </div>
 </body>
 <script src="assets/script/script.js"></script>
+
 </html>

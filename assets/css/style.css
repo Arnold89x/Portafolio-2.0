@@ -1,6 +1,7 @@
 @import url("navigation.css");
 @import url("heroScreen.css");
 @import url("aboutMe.css");
+@import url("projects.css");
 
 html {
   scroll-behavior: smooth;

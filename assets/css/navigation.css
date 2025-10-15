@@ -96,7 +96,6 @@
   border-radius: 15px;
   padding: 5px 20px;
   transition: all 0.7s ease;
-  z-index: 1000;
 }
 
 .nav:hover {
@@ -122,7 +121,7 @@
 
 .nav__nombre {
   font-family: 'Great Vibes', cursive;
-  font-size: 24px;
+  font-size: 1.5vw;
   letter-spacing: 1px;
   line-height: 1.2;
   color: #ccc;

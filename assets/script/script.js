@@ -1,4 +1,5 @@
 const logo = document.querySelector('.nav__logo');
+
 const heroName = document.getElementById("hero__name");
 const fullName = "Arnold\u00A0Santiago\u00A0Gil\u00A0Maldonado";
 const heroDegree = document.getElementById("hero__degree");
@@ -8,6 +9,18 @@ const heroButton = document.querySelectorAll('.hero__button');
 const heroImagen = document.querySelector(".hero__imagen");
 const heroContacts = document.querySelector(".hero__contacts");
 const heroArrow = document.getElementById("hero__arrow");
+
+const buttonDemoVideo = document.querySelector('.house__button');
+const video = document.getElementById("video");
+
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('video');
+}
+
+onYouTubeIframeAPIReady();
 
 logo.addEventListener('animationend', (e) => {
   if (e.animationName === 'afuera') {
@@ -66,7 +79,7 @@ heroText.addEventListener('animationend', (e) => {
 heroButton.forEach((e) => {
   e.addEventListener('animationend', (e) => {
     if (e.animationName === 'fade_in_button') {
-      heroArrow.style.visibility="visible";
+      heroArrow.style.visibility = "visible";
       heroArrow.style.animation = "fade_in 1s ease-in-out forwards";
       heroArrow.addEventListener('animationend', (e) => {
         if (e.animationName === "fade_in") {
@@ -75,4 +88,39 @@ heroButton.forEach((e) => {
       });
     }
   });
+});
+
+window.addEventListener('scroll', () => {
+  const sectionAboutMe = document.querySelector('.about__me__container');
+  const sectionProject = document.getElementById('project__general__container');
+  const positionAboutMe = sectionAboutMe.getBoundingClientRect().top;
+  const positionProject = sectionProject.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (positionAboutMe < screenHeight * 0.5) {
+    sectionAboutMe.style.animation = "show 2s ease-in-out 1 forwards";
+  }
+
+  if (positionProject < screenHeight * 0.5) {
+    sectionProject.style.animation = "show__p 2s ease-in-out 1 forwards";
+  }
+});
+
+buttonDemoVideo.addEventListener('click', () => {
+  const domoticHouseContainer = document.querySelector(".domotic__house__video__container");
+  const exitVideo = document.querySelector(".exit__domotic__video");
+  player.playVideo();
+  
+  domoticHouseContainer.style.display = "block";
+  exitVideo.addEventListener('click', () => {
+    closeVideo();
+  })
+  domoticHouseContainer.addEventListener('click', () => {
+    closeVideo();
+  })
+
+  function closeVideo() {
+    domoticHouseContainer.style.display = "none";
+    player.pauseVideo();
+  }
 });
